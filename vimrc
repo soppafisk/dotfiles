@@ -19,6 +19,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'jiangmiao/auto-pairs'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -42,9 +45,12 @@ set smartcase
 set autoindent
 set t_Co=256
 colorscheme xoria256
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+
 
 " Auto-remove trailing spaces
-autocmd BufWritePre *.php :%s/\s\+$//e
+autocmd BufWritePre *.(php|js) :%s/\s\+$//e
 
 
 "-------------- Tabs ----------------"
@@ -52,6 +58,36 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+
+
+"------------- Emmet ---------------"
+let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_settings = {
+  \  'php' : {
+  \    'extends' : 'html',
+  \    'filters' : 'c',
+  \  },
+  \  'xml' : {
+  \    'extends' : 'html',
+  \  },
+  \  'javascript' : {
+  \    'extends' : 'jsx',
+  \  },
+  \}
+
+
+
+
+
+
+"-------- CtrlP ---------------------"
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](node_modules|vendor|target|dist)|(\.(swp|ico|git|svn))$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ }
 
 
 
@@ -79,5 +115,5 @@ set incsearch
 
 
 "---------- Auto source .vimrc ------"
-autocmd BufWritePost .vimrc source %
+autocmd BufWritePost vimrc source %
 
