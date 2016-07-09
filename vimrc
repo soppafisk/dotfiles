@@ -21,6 +21,10 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'honza/vim-snippets'
+Plugin 'garbas/vim-snipmate'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
