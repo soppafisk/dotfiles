@@ -99,6 +99,7 @@ let g:ctrlp_custom_ignore = {
 
 "-------------- Mappings ----------------"
 nmap <Leader>ev :tabedit $MYVIMRC<cr> 
+nmap <Leader>es :e ~/.vim/snippets/
 nmap <Leader><space> :nohlsearch<cr>
 
 "easier window navigation
